@@ -4,6 +4,6 @@ exports.handler = (event, context, callback) => {
     currentTime.setTimezone("America/Sao_Paulo");
     callback(null, {
         statusCode: '200',
-        body: 'The time in Sao Paulo is: ' + currentTime.toString(),
+        body: '#### The time in Sao Paulo is: ' + currentTime.toString(),
     });
 };
