@@ -2,15 +2,27 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Outputs the time
 Resources:
-  TimeFunction:
+  TimeLosAngeles:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
       Runtime: nodejs6.10
-      CodeUri: ./
+      CodeUri: ./los_angeles
       Events:
-        MyTimeApi:
+        getTime:
           Type: Api
           Properties:
-            Path: /TimeResource
+            Path: /los_angeles
+            Method: GET
+  TimeSaoPaulo:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs6.10
+      CodeUri: ./sao_paulo
+      Events:
+        getTime:
+          Type: Api
+          Properties:
+            Path: /sao_paulo
             Method: GET
