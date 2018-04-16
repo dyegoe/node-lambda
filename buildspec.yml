@@ -1,12 +1,14 @@
 version: 0.1
 phases:
-  install:
+  build:
     commands:
       - cd los_angeles
       - npm install time
       - cd ../sao_paulo
       - npm install time
       - cd ..
+  install:
+    commands:
       - aws cloudformation package --template-file samTemplate.yml --s3-bucket codepipeline-vmwcloud-lambda 
                                    --output-template-file outputSamTemplate.yml
 artifacts:
