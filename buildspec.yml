@@ -1,12 +1,9 @@
-version: 0.1
+version: 0.2
 phases:
   install:
     commands:
-      - echo 1 `pwd`
       - cd los_angeles
-      - echo 2 `pwd`
       - npm install time
-      - echo 3 `pwd`
       - cd ../sao_paulo
       - npm install time
       - cd ..
